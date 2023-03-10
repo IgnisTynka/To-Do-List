@@ -48,7 +48,7 @@ function App() {
                     return (
                       <div className="task" key={task.id}>
                         <p>{task.name}</p>
-                        <input type="checkbox" id="checkbox" onChange={()=>{
+                        <input type="checkbox" className="checkbox" onChange={()=>{
                           handleCheckboxChange(task.id)
                         }}/>
                       </div>
@@ -67,7 +67,7 @@ function App() {
                     return (
                       <div className="task finished" key={task.id}>
                         <p>{task.name}</p>
-                        <input type="checkbox" id="checkbox" onChange={()=>{
+                        <input type="checkbox" className="checkbox" onChange={()=>{
                           handleCheckboxChange(task.id)
                           }} checked/>
                       </div>
