@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState} from 'react';
 import './App.css';
 import github from'./github.svg';
 
 function App() {
-
   const [ArrayOfTasks, setArrayOfTasks] = useState([]);
 
   const [task, setTask] = useState("");
@@ -36,7 +35,9 @@ function App() {
           <input type="text" placeholder="Add new task" id="task" value={task} onChange={(e)=>{
             setTask(e.target.value);
           }}/> 
-          <button id="btn" onClick={addTask}>Add</button>
+          <div id='btnRef'>
+            <button id="btn" onClick={addTask}>Add</button>
+          </div>
         </div>
         <div className="App-body_tasklist">
           <div className="App-body_tasklist_notfinished">
