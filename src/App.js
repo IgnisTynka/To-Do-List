@@ -9,6 +9,9 @@ function App() {
   const [task, setTask] = useState("");
 
   function addTask(){
+    if (task === "") {
+      return;
+    }
     let newTask = {id: ArrayOfTasks.length + 1, name: task, finished: false};
     setArrayOfTasks([...ArrayOfTasks, newTask]);
     setTask("");
