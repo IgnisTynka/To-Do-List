@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useState} from 'react';
 import './App.css';
 import github from'./github.svg';
+
 
 function App() {
   const [ArrayOfTasks, setArrayOfTasks] = useState([]);
