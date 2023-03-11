@@ -76,7 +76,7 @@ h1{
 .effect-container::before{
     content: "";
     position: absolute;
-    opacity: 0.3;
+    opacity: 0.5;
 
     top: var(--effect-top);
     left: var(--effect-left);
