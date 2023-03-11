@@ -59,27 +59,61 @@ h1{
     font-size: 0.9rem;
 }
 
+.effect-container{
+    border-radius: 2rem;
+    position: relative;
+    overflow: hidden;
+
+    --effect-name: ripple;
+    --effect-duration: 1000ms;
+    --effect-top: 0px;
+    --effect-left: 0px;
+    --effect-height: 100px;
+    --effect-width: 100px;
+    --effect-color: #white;
+}
+
+.effect-container::before{
+    content: "";
+    position: absolute;
+    opacity: 0.3;
+
+    top: var(--effect-top);
+    left: var(--effect-left);
+    height: var(--effect-height);
+    width: var(--effect-width);
+    border-radius: 50%;
+    transform: scale(0);
+    background: var(--effect-color);
+}
+
+.effect-container.active::before{
+    border-radius: 50%;
+    animation: ripple var(--effect-duration) linear forwards;
+}
+
+@keyframes ripple{
+    from {
+        transform: scale(0);
+    }
+    to{
+        transform: scale(6);
+        opacity: 0;
+    }
+}
+
 #btn{
+    display: block;
+    cursor: pointer;
     width: 100px;
     height: 40px;
-    text-align: center;
-    text-justify: center;
     padding: 0.5rem 1rem;
-    border: 1px solid #118AB2;
+    border: none;
     border-radius: 2rem;
-    margin: 0.5rem 0.5rem;
     background-image: linear-gradient(to right bottom, #007783, #0a9799, #2eb8aa, #56d8b6, #84f9bd);
     color: #FFF7F8;
     font-size: 1.35rem;
     font-weight: 500;
-}
-
-#btn:hover{
-    cursor: pointer;;
-}
-#btn:active{
-    background-color: #118AB2;
-    color: #FFF7F8;
 }
 
 .App-body_tasklist{

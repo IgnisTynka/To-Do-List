@@ -1,15 +1,22 @@
 import React from 'react';
 import { useState} from 'react';
+import { useRef } from 'react';
+import { useClickAnimation } from './useClickAnimation';
 import './App.css';
 import github from'./github.svg';
 
-
 function App() {
+
+  const btnRef = useRef();
+
+  useClickAnimation(btnRef, {});
+
   const [ArrayOfTasks, setArrayOfTasks] = useState([]);
 
   const [task, setTask] = useState("");
 
   function addTask(){
+    console.log("test");
     if (task === "") {
       return;
     }
@@ -39,9 +46,7 @@ function App() {
           <input type="text" placeholder="Add new task" id="task" value={task} onChange={(e)=>{
             setTask(e.target.value);
           }}/> 
-          <div id='btnRef'>
-            <button id="btn" onClick={addTask}>Add</button>
-          </div>
+            <button id="btn"ref={btnRef} onClick={addTask}>Add</button>
         </div>
         <div className="App-body_tasklist">
           <div className="App-body_tasklist_notfinished">
