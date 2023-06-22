@@ -1,8 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## To-Do-List App in React
+# To-Do-List App in React
 
 ![image](https://github.com/IgnisTynka/To-Do-List/assets/93093005/1749d309-3422-469f-b0ad-3eab8a742c90)
 
